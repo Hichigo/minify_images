@@ -1,10 +1,11 @@
 from PIL import Image
 import os
- 
-imageIn = 'D:\\project\\Python\\pdf\\imgFull'
-imageOut = 'D:\\project\\Python\\pdf\\imgLite'
 
- 
+selfDir = os.path.dirname(os.path.abspath(__file__))
+
+imageIn = os.path.join(selfDir, 'imgFull')
+imageOut = os.path.join(selfDir, 'imgLite')
+
 def scale_image(input_image_path, output_image_path, width=None, height=None):
 
 	exts = ('.jpg', '.JPG', '.jpeg', '.JPEG', '.png')
