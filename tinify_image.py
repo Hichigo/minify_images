@@ -15,7 +15,7 @@ imageOut = os.path.join(selfDir, 'imgLite')
 thumbOut = os.path.join(selfDir, 'imgThumb')
 
 
-def tinify_and_compress(width=None, height=None):
+def tinify_mp(width=None, height=None):
 	exts = ('.jpg', '.JPG', '.jpeg', '.JPEG', '.png')
 	outImage = ''
 
@@ -40,4 +40,4 @@ def tinify_and_compress(width=None, height=None):
 				print(i, name)
 
 if __name__ == '__main__':
-	tinify_and_compress(width=1920, height=1080)
+	tinify_mp(width=1920, height=1080)
