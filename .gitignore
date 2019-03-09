@@ -1,2 +1,4 @@
 imgFull/
 imgLite/
+__pycache__/
+tinify_image_key.py
