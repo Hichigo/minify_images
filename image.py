@@ -5,8 +5,9 @@ selfDir = os.path.dirname(os.path.abspath(__file__))
 
 imageIn = os.path.join(selfDir, 'imgFull')
 imageOut = os.path.join(selfDir, 'imgLite')
+thumbOut = os.path.join(selfDir, 'imgThumb')
 
-def scale_image(input_image_path, output_image_path, width=None, height=None):
+def scale_images(input_image_path, output_image_path, width=None, height=None):
 
 	exts = ('.jpg', '.JPG', '.jpeg', '.JPEG', '.png')
 	outImage = ''
@@ -15,7 +16,7 @@ def scale_image(input_image_path, output_image_path, width=None, height=None):
 		for name in files: # look all files in folder
 			if name.endswith(exts): # check exist extensions
 				path_image = os.path.join(path, name)
-				outImagePath = path.replace('imgFull', 'imgLite')
+				outImagePath = path.replace(input_image_path, output_image_path)
 				outImage = os.path.join(outImagePath, name)
 
 				if not os.path.exists(outImagePath): # check not exist path
@@ -24,9 +25,9 @@ def scale_image(input_image_path, output_image_path, width=None, height=None):
 				original_image = Image.open(path_image)
 				w, h = original_image.size
 				
-				if (w, h) <= (width, height): #check size image
-					print('The picture has little!')
-					continue
+				# if (w, h) <= (width, height): #check size image
+				# 	print('The picture has little!')
+				# 	continue
 
 				if width and height:
 					max_size = (width, height)
